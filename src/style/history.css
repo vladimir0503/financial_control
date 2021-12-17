@@ -1,0 +1,41 @@
+.historyItem {
+  width: 447px;
+  font-size: 17px;
+  font-weight: 400;
+  background-color: #fafafa;
+  list-style-type: none;
+  margin-top: 5px;
+  margin-left: 6px;
+  margin-bottom: 14px;
+  padding-left: 13px;
+  box-shadow: 1px 1px 8px -3px #000000;
+  border-radius: 7px;
+}
+
+@media screen and (max-width: 1300px) {
+  .historyItem {
+    width: 318px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .historyItem {
+    padding-right: 13px;
+    width: 243px;
+  }
+}
+
+.historyFull {
+  max-height: 389px;
+  overflow: auto;
+}
+
+@media screen and (max-width: 1300px) {
+  .historyFull {
+    max-height: 198px;
+  }
+}
+
+.historyEmpty {
+  max-height: 389px;
+}

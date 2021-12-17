@@ -1,0 +1,38 @@
+.btn {
+  backface-visibility: hidden;
+  border-radius: 9999px;
+  border: 1px solid rgb(245, 244, 242);
+  box-sizing: border-box;
+  cursor: default;
+  display: flex;
+  font-weight: 500;
+  background-color: rgb(245, 244, 242);
+  height: unset;
+  justify-content: center;
+  padding: 0.78125rem 1.5rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: 0.3s;
+  user-select: none;
+  white-space: unset;
+  width: 100%;
+  color: rgb(177, 172, 163);
+  font-size: 16px;
+  margin-top: 9px;
+  margin-bottom: 24px;
+  outline: 0;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #fa877d;
+  color: black;
+}
+
+.btn:active {
+  background-color: #db4c3f;
+  top: 2px;
+  outline: none;
+}
