@@ -44,7 +44,7 @@ function NewOperation() {
     };
 
     if (!refill && +sum > total) {
-      createInfo("Нулевой баланс!");
+      createInfo("На балансе не достаточно средств!");
       success = false;
     };
 
