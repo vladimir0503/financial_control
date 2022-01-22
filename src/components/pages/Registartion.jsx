@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { fetchAddNewUser } from "../../redux/actions/app";
+import { fetchAddNewUser } from '../../features/app/appSlice';
 import useAuthForm from "../../hooks/useAuthForm";
 import FetchButton from "../common/FetchButton";
 
@@ -48,8 +48,9 @@ function Registartion() {
             type="password"
             className="inp"
             value={repeatPassword}
-            onChange={(e) => setRepeatPassword(e.target.value)}
-          ></input>
+            onChange={e => setRepeatPassword(e.target.value)}
+          >
+          </input>
         </div>
         <FetchButton isLoading={isLoading} handleSubmit={formSubmit} text='Зарегистрироваться' />
         <Link to="/">

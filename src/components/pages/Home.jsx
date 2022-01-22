@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Route } from "react-router-dom";
-
-import { loadUser } from "../../redux/actions/loadUser";
 import Header from "../Header";
 import NewOperation from "./NewOperation";
 import History from "./History";
 
-function Home({ authData }) {
+function Home() {
   const [greeting, setGreeting] = useState(true);
   const [timesOfDay, setTimesOfDay] = useState(null);
 
-  const { userName, total, history } = useSelector(({ user }) => user);
-  const dispatch = useDispatch();
-  // const userData = JSON.parse(authData);
+  const { userName, total, history } = useSelector(({ user }) => user.userData);
 
   const getTimesOfDay = () => {
     const hour = new Date().getHours();

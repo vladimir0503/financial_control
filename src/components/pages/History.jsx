@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-
-import { fetchClearHistory } from "../../redux/actions/history";
+import { fetchClearHistory } from "../../features/user/userSlice";
 import Form from "../Form";
 
 function History() {
-  const historyArr = useSelector(({ user }) => user.history);
+  const historyArr = useSelector(({ user }) => user.userData.history);
 
   const dispatch = useDispatch();
 

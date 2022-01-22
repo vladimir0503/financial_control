@@ -6,7 +6,7 @@ function Popup({ popupLogOff }) {
     const [initPopup, setInitPopup] = useState(false);
     const popupRef = useRef();
 
-    const history = useSelector(({ user }) => user.history);
+    const { history } = useSelector(({ user }) => user.userData);
 
     const handleLogOff = () => {
         setInitPopup(false);
@@ -47,7 +47,7 @@ function Popup({ popupLogOff }) {
                 </div>
             </button>
             <div className={initPopup ? "popupBlock show" : "popupBlock hide"}>
-                {!!history.length
+                {!!history
                     && <Link to="/history">
                         <button onClick={() => setInitPopup(false)} className="headerBtn popupItemBtn">История операций</button>
                     </Link>}

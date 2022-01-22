@@ -2,11 +2,14 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import StartScreen from "./components/pages/StartScreen";
 import Home from "./components/pages/Home";
-import { fetchAuthApp } from "./redux/actions/app";
+// import { fetchAuthApp } from "./redux/actions/app";
+import { fetchAuthApp } from './features/app/appSlice';
 
 function App() {
   const isAuth = useSelector(({ app }) => app.isAuth);
   const dispatch = useDispatch();
+
+  console.log(isAuth);
 
   React.useEffect(() => {
     if (sessionStorage.getItem('isAuth')) {

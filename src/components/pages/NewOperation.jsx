@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { newOperation } from "../../redux/actions/history";
-import { fetchSum } from "../../redux/actions/totalSum";
+import { newOperation } from "../../features/user/userSlice";
+import { fetchSum } from "../../features/user/userSlice";
 import Form from "../Form";
 
 function NewOperation() {
@@ -13,7 +13,8 @@ function NewOperation() {
     status: false,
   });
 
-  const total = useSelector(({ user }) => user.total);
+  const { total } = useSelector(({ user }) => user.userData);
+
 
   const dispatch = useDispatch();
   const currentDate = new Date().toLocaleDateString();

@@ -1,10 +1,25 @@
-import { getUsers, addNewUser } from "../../api/api";
-import { loadUser } from "./loadUser";
+import { createSlice } from '@reduxjs/toolkit';
+import { getUsers, addNewUser } from '../../api/api';
+import { loadUser } from '../user/userSlice';
 
-export const authApp = val => ({ type: 'AUTH_APP', payload: val });
-export const logout = () => ({ type: 'LOGOUT' });
+const initialState = {
+    isAuth: false
+};
 
-export const getUserData = getState => getState().user;
+export const appSlice = createSlice({
+    name: 'app',
+    initialState,
+    reducers: {
+        authApp: (state, action) => {
+            state.isAuth = action.payload
+        },
+        logout: state => {
+            state.isAuth = false
+        }
+    }
+});
+
+export const { authApp, logout } = appSlice.actions;
 
 const findUser = async (name, password) => {
     const users = await getUsers();
@@ -35,3 +50,5 @@ export const fetchAddNewUser = (name, password) => async dispatch => {
         return false;
     };
 };
+
+export default appSlice.reducer;

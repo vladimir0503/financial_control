@@ -3,13 +3,11 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
-import { getStore } from "./redux/store";
-// import store from "./redux/redusers/user";
+
+import { store } from './features/store';
 
 import "semantic-ui-css/semantic.min.css";
 import "./style/style.css";
-
-const store = getStore();
 
 ReactDOM.render(
   <Router>

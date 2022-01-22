@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Form from "../Form";
-import { fetchAuthApp } from '../../redux/actions/app'
+import { fetchAuthApp } from '../../features/app/appSlice';
 import useAuthForm from "../../hooks/useAuthForm";
 import FetchButton from "../common/FetchButton";
 

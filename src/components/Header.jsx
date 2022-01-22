@@ -1,15 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../redux/actions/app";
-import { clearUser } from "../redux/actions/loadUser";
+import { useDispatch } from "react-redux";
+import { logout } from '../features/app/appSlice';
+import { clearUser } from '../features/user/userSlice'
 import Popup from "./Popup";
 
 
-function Header({ total }) {
+function Header({ history, total }) {
   const dispatch = useDispatch();
-
-  const history = useSelector(({ user }) => user.history);
 
   const logOff = () => {
     dispatch(logout());
@@ -23,7 +21,7 @@ function Header({ total }) {
       <Popup popupLogOff={logOff} />
       <div className="savingBlock">
         <div>
-          {!!history.length
+          {!!history
             && <Link to="/history">
               <button className="headerBtn">История операций</button>
             </Link>}
